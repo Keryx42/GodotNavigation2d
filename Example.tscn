@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://wdmptf4h4mgc"]
+[gd_scene load_steps=15 format=3 uid="uid://wdmptf4h4mgc"]
 
 [ext_resource type="Texture2D" uid="uid://c80uptawk02ql" path="res://icon.png" id="1_g2q80"]
 [ext_resource type="Texture2D" uid="uid://dp7v0aj0qxs6w" path="res://assets/terrainTiles_retina.png" id="2_22acd"]
@@ -170,6 +170,9 @@ font_size = 32
 [sub_resource type="LabelSettings" id="LabelSettings_5mvq6"]
 font_size = 32
 
+[sub_resource type="LabelSettings" id="LabelSettings_wit53"]
+font_size = 32
+
 [node name="Example" type="Node2D"]
 
 [node name="TileMap" type="TileMap" parent="."]
@@ -273,5 +276,13 @@ offset_bottom = 45.0
 grow_horizontal = 2
 text = "PositionB"
 label_settings = SubResource("LabelSettings_5mvq6")
+
+[node name="Label" type="Label" parent="."]
+offset_left = 411.0
+offset_top = 132.0
+offset_right = 563.0
+offset_bottom = 177.0
+text = "Obstacles"
+label_settings = SubResource("LabelSettings_wit53")
 
 [connection signal="target_reached" from="CharacterBody2D/NavigationAgent2D" to="CharacterBody2D" method="_on_navigation_agent_2d_target_reached"]
