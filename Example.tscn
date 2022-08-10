@@ -197,15 +197,17 @@ metadata/_edit_lock_ = true
 
 [node name="NavigationAgent2D" type="NavigationAgent2D" parent="CharacterBody2D"]
 unique_name_in_owner = true
-path_desired_distance = 20.92
+path_desired_distance = 42.4
 target_desired_distance = 24.0
+path_max_distance = 50.0
 avoidance_enabled = true
 
 [node name="Obstacles" type="Node2D" parent="."]
 position = Vector2(479, 222)
 
-[node name="Obstacle" type="StaticBody2D" parent="Obstacles"]
+[node name="Obstacle" type="RigidDynamicBody2D" parent="Obstacles"]
 position = Vector2(1, 118)
+gravity_scale = 0.0
 
 [node name="Sprite2D" type="Sprite2D" parent="Obstacles/Obstacle"]
 texture = ExtResource("3_e2hmv")
@@ -217,8 +219,9 @@ metadata/_edit_lock_ = true
 
 [node name="NavigationObstacle2D" type="NavigationObstacle2D" parent="Obstacles/Obstacle/CollisionShape2D"]
 
-[node name="Obstacle2" type="StaticBody2D" parent="Obstacles"]
+[node name="Obstacle2" type="RigidDynamicBody2D" parent="Obstacles"]
 position = Vector2(1, 59)
+gravity_scale = 0.0
 
 [node name="Sprite2D" type="Sprite2D" parent="Obstacles/Obstacle2"]
 texture = ExtResource("3_e2hmv")
@@ -230,7 +233,8 @@ metadata/_edit_lock_ = true
 
 [node name="NavigationObstacle2D" type="NavigationObstacle2D" parent="Obstacles/Obstacle2/CollisionShape2D"]
 
-[node name="Obstacle3" type="StaticBody2D" parent="Obstacles"]
+[node name="Obstacle3" type="RigidDynamicBody2D" parent="Obstacles"]
+gravity_scale = 0.0
 
 [node name="Sprite2D" type="Sprite2D" parent="Obstacles/Obstacle3"]
 texture = ExtResource("3_e2hmv")
@@ -285,4 +289,4 @@ offset_bottom = 177.0
 text = "Obstacles"
 label_settings = SubResource("LabelSettings_wit53")
 
-[connection signal="target_reached" from="CharacterBody2D/NavigationAgent2D" to="CharacterBody2D" method="_on_navigation_agent_2d_target_reached"]
+[connection signal="navigation_finished" from="CharacterBody2D/NavigationAgent2D" to="CharacterBody2D" method="_on_navigation_agent_2d_navigation_finished"]

@@ -32,5 +32,6 @@ func toggle_targe_positon() -> void:
 	
 	set_target_position(position_a)
 
-func _on_navigation_agent_2d_target_reached():
+
+func _on_navigation_agent_2d_navigation_finished():
 	toggle_targe_positon()
