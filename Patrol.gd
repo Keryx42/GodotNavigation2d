@@ -9,7 +9,6 @@ const SPEED = 300.0
 @onready var position_b : Position2D = get_node(position_b_path)
 @onready var navigation_agent : NavigationAgent2D = $'%NavigationAgent2D'
 
-
 var current_target_position : Position2D
 
 func _ready():
@@ -19,7 +18,7 @@ func _physics_process(delta):
 	var next_location = navigation_agent.get_next_location()
 	var direction = (next_location - global_transform.origin).normalized()
 	velocity = velocity.move_toward(direction * SPEED, 540 * delta)
-	move_and_slide()
+	navigation_agent.set_velocity(velocity)
 
 func set_target_position(target_position: Position2D) -> void: 
 	current_target_position = target_position
@@ -32,6 +31,9 @@ func toggle_targe_positon() -> void:
 	
 	set_target_position(position_a)
 
-
 func _on_navigation_agent_2d_navigation_finished():
 	toggle_targe_positon()
+
+func _on_navigation_agent_2d_velocity_computed(safe_velocity):
+	velocity = safe_velocity
+	move_and_slide()

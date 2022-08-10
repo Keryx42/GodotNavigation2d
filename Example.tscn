@@ -201,6 +201,8 @@ path_desired_distance = 42.4
 target_desired_distance = 24.0
 path_max_distance = 50.0
 avoidance_enabled = true
+radius = 100.39
+max_speed = 500.0
 
 [node name="Obstacles" type="Node2D" parent="."]
 position = Vector2(479, 222)
@@ -290,3 +292,4 @@ text = "Obstacles"
 label_settings = SubResource("LabelSettings_wit53")
 
 [connection signal="navigation_finished" from="CharacterBody2D/NavigationAgent2D" to="CharacterBody2D" method="_on_navigation_agent_2d_navigation_finished"]
+[connection signal="velocity_computed" from="CharacterBody2D/NavigationAgent2D" to="CharacterBody2D" method="_on_navigation_agent_2d_velocity_computed"]
