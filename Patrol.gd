@@ -19,6 +19,8 @@ func _physics_process(delta):
 	var direction = (next_location - global_transform.origin).normalized()
 	velocity = velocity.move_toward(direction * SPEED, 540 * delta)
 	navigation_agent.set_velocity(velocity)
+	move_and_slide()
+	
 
 func set_target_position(target_position: Position2D) -> void: 
 	current_target_position = target_position

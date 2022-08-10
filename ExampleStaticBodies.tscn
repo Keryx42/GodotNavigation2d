@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://wdmptf4h4mgc"]
+[gd_scene load_steps=16 format=3 uid="uid://bxeo4q6rfibaw"]
 
 [ext_resource type="Texture2D" uid="uid://c80uptawk02ql" path="res://icon.png" id="1_g2q80"]
 [ext_resource type="Texture2D" uid="uid://dp7v0aj0qxs6w" path="res://assets/terrainTiles_retina.png" id="2_22acd"]
@@ -7,7 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://bag73ul3ii7g2" path="res://assets/barrelGreen_top.png" id="4_332n4"]
 [ext_resource type="Texture2D" uid="uid://uxrxmfj2bibg" path="res://assets/barrelRed_top.png" id="5_pyd0p"]
 
-[sub_resource type="LabelSettings" id="LabelSettings_l7pep"]
+[sub_resource type="LabelSettings" id="LabelSettings_8vrtc"]
 font_size = 40
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_gogw4"]
@@ -184,8 +184,8 @@ offset_left = 267.0
 offset_top = 17.0
 offset_right = 689.0
 offset_bottom = 72.0
-text = "RidgitDynamicBody2d"
-label_settings = SubResource("LabelSettings_l7pep")
+text = "StaticBody2d"
+label_settings = SubResource("LabelSettings_8vrtc")
 horizontal_alignment = 1
 
 [node name="TileMap" type="TileMap" parent="."]
@@ -220,9 +220,8 @@ max_speed = 500.0
 [node name="Obstacles" type="Node2D" parent="."]
 position = Vector2(479, 222)
 
-[node name="Obstacle" type="RigidDynamicBody2D" parent="Obstacles"]
+[node name="Obstacle" type="StaticBody2D" parent="Obstacles"]
 position = Vector2(1, 118)
-gravity_scale = 0.0
 
 [node name="Sprite2D" type="Sprite2D" parent="Obstacles/Obstacle"]
 texture = ExtResource("3_e2hmv")
@@ -234,9 +233,8 @@ metadata/_edit_lock_ = true
 
 [node name="NavigationObstacle2D" type="NavigationObstacle2D" parent="Obstacles/Obstacle/CollisionShape2D"]
 
-[node name="Obstacle2" type="RigidDynamicBody2D" parent="Obstacles"]
+[node name="Obstacle2" type="StaticBody2D" parent="Obstacles"]
 position = Vector2(1, 59)
-gravity_scale = 0.0
 
 [node name="Sprite2D" type="Sprite2D" parent="Obstacles/Obstacle2"]
 texture = ExtResource("3_e2hmv")
@@ -248,8 +246,7 @@ metadata/_edit_lock_ = true
 
 [node name="NavigationObstacle2D" type="NavigationObstacle2D" parent="Obstacles/Obstacle2/CollisionShape2D"]
 
-[node name="Obstacle3" type="RigidDynamicBody2D" parent="Obstacles"]
-gravity_scale = 0.0
+[node name="Obstacle3" type="StaticBody2D" parent="Obstacles"]
 
 [node name="Sprite2D" type="Sprite2D" parent="Obstacles/Obstacle3"]
 texture = ExtResource("3_e2hmv")
