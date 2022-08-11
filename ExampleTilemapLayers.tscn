@@ -505,7 +505,6 @@ unique_name_in_owner = true
 path_desired_distance = 20.0
 target_desired_distance = 20.0
 path_max_distance = 20.0
-avoidance_enabled = true
 radius = 500.0
 neighbor_dist = 500.62
 
