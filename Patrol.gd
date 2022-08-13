@@ -12,6 +12,7 @@ const SPEED = 300.0
 var current_target_position : Position2D
 
 func _ready():
+	print(position_a)
 	set_target_position(position_a)
 
 func _physics_process(delta):
